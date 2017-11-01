@@ -28,11 +28,7 @@ public class Robot extends IterativeRobot {
 	CANTalon rightMiddleTalon;
 	CANTalon rightBackTalon;
 	
-	/**
-	 * This function is run when the robot is first started up and should be
-	 * used for any initialization code.
-	 * 
-	 */
+
 	@Override
 	public void robotInit() {
 		stick = new Joystick(0);
@@ -54,20 +50,13 @@ public class Robot extends IterativeRobot {
 		
 	}	
 	
-	/**
-	 * Sets CANTalons to follow a leader
-	 * 
-	 * @param follower
-	 * @param leader
-	 */
+
 	public static void follow(CANTalon follower, CANTalon leader) {
 		follower.changeControlMode(CANTalon.TalonControlMode.Follower);
 		follower.set(leader.getDeviceID());
 	}
 
-	/**
-	 * This function is called periodically during operator control
-	 */
+
 	@Override
 	public void teleopPeriodic() {
 
